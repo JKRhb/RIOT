@@ -109,7 +109,6 @@ static char _msg_stack[GCOAP_STACK_SIZE];
 static event_queue_t _queue;
 static uint8_t _listen_buf[CONFIG_GCOAP_PDU_BUF_SIZE];
 static sock_udp_t _sock_udp;
-const ipv6_addr_t ipv6_addr_all_coap_nodes = GCOAP_ALL_COAP_NODES_ADDR;
 
 /* Event loop for gcoap _pid thread. */
 static void *_event_loop(void *arg)
@@ -753,10 +752,6 @@ kernel_pid_t gcoap_init(void)
     memset(&_coap_state.resend_bufs[0], 0, sizeof(_coap_state.resend_bufs));
     /* randomize initial value */
     atomic_init(&_coap_state.next_message_id, (unsigned)random_uint32());
-
-    /* register all_CoAP_nodes multicast address */
-    gnrc_netif_ipv6_group_join_internal(gnrc_netif_get_by_pid(_pid),
-                                        &ipv6_addr_all_coap_nodes);
 
     return _pid;
 }

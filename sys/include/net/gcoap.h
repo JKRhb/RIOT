@@ -405,16 +405,6 @@ extern "C" {
 #endif
 
 /**
- * @brief   Static initializer for the "All CoAP Nodes" multicast IPv6
- *          address (ff02::fd)
- *
- * @see <a href="https://tools.ietf.org/html/rfc7252#section-12.8">
- *          RFC 7252, section 12.8
- *      </a>
- */
-#define GCOAP_ALL_COAP_NODES_ADDR {{ 0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xfd }}
-
-/**
  * @brief   Size of the buffer used to build a CoAP request or response
  */
 #ifndef CONFIG_GCOAP_PDU_BUF_SIZE

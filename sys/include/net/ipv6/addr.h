@@ -140,6 +140,19 @@ typedef union {
                                                0x00, 0x00, 0x00, 0x01 }}
 
 /**
+ * @brief   Static initializer for the "All CoAP Nodes" multicast IPv6
+ *          address (ff02::fd)
+ *
+ * @see <a href="https://tools.ietf.org/html/rfc7252#section-12.8">
+ *          RFC 7252, section 12.8
+ *      </a>
+ */
+#define IPV6_ADDR_ALL_COAP_NODES_LINK_LOCAL {{ 0xff, 0x02, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0xfd }}
+
+/**
  * @brief   Static initializer for the interface-local all routers multicast IPv6
  *          address (ff01::2)
  *
