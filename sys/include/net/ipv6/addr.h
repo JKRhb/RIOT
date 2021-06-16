@@ -180,6 +180,33 @@ typedef union {
                                                0x00, 0x00, 0x00, 0x02 }}
 
 /**
+ * @brief   Static initializer for the link-local "All CoAP Nodes"
+ *          multicast IPv6 address (ff02::fd)
+ *
+ * @see <a href="https://tools.ietf.org/html/rfc7252#section-12.8">
+ *          RFC 7252, section 12.8
+ *      </a>
+ */
+#define IPV6_ADDR_ALL_COAP_NODES_LINK_LOCAL {{ 0xff, 0x02, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0xfd }}
+
+/**
+ * @brief   Static initializer for the site-local "All CoAP Nodes"
+ *          multicast IPv6 address (ff05::fd)
+ *
+ * @see <a href="https://tools.ietf.org/html/rfc7252#section-12.8">
+ *          RFC 7252, section 12.8
+ *      </a>
+ */
+#define IPV6_ADDR_ALL_COAP_NODES_SITE_LOCAL {{ 0xff, 0x05, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0x00, \
+                                               0x00, 0x00, 0x00, 0xfd }}
+
+
+/**
  * @brief   Static initializer for the solicited node multicast prefix
  *          (ff02:0:0:0:0:1:ff00::/104)
  *
@@ -298,6 +325,16 @@ extern const ipv6_addr_t ipv6_addr_all_routers_link_local;
  * @see @ref IPV6_ADDR_ALL_ROUTERS_SITE_LOCAL
  */
 extern const ipv6_addr_t ipv6_addr_all_routers_site_local;
+
+/**
+ * @see @ref IPV6_ADDR_ALL_COAP_NODES_LINK_LOCAL
+ */
+extern const ipv6_addr_t ipv6_addr_all_coap_nodes_link_local;
+
+/**
+ * @see @ref IPV6_ADDR_ALL_COAP_NODES_SITE_LOCAL
+ */
+extern const ipv6_addr_t ipv6_addr_all_coap_nodes_site_local;
 
 /**
  * @see @ref IPV6_ADDR_SOLICITED_NODE_PREFIX
