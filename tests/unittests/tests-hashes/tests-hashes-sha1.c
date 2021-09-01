@@ -64,8 +64,8 @@ static const char *_resultarray[TEST_CASES_NUM + 2] =
 
 #define TEST_CASES_HMAC_NUM      (5)
 
-#define TEST1_HMAC	"Hi There"
-#define TEST2_HMAC	"what do ya want for nothing?"
+#define TEST1_HMAC  "Hi There"
+#define TEST2_HMAC  "what do ya want for nothing?"
 #define TEST3_HMAC  "Test With Truncation"
 #define TEST4_HMAC  "Test Using Larger Than Block-Size Key - Hash Key First"
 #define TEST5_HMAC  "Test Using Larger Than Block-Size Key and Larger Than One Block-Size Data"
