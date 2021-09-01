@@ -44,7 +44,7 @@ const char* TestCase_name(TestCase* self)
     return self->name;
 }
 
-void TestCase_run(TestCase* self,TestResult* result)
+void TestCase_run(TestCase* self, TestResult* result)
 {
     TestResult_startTest(result, (Test*)self);
     if (self->setUp) {

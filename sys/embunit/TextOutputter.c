@@ -40,37 +40,37 @@ static void TextOutputter_printHeader(OutputterRef self)
     (void)self;
 }
 
-static void TextOutputter_printStartTest(OutputterRef self,TestRef test)
+static void TextOutputter_printStartTest(OutputterRef self, TestRef test)
 {
     (void)self;
-    printf("- %s\n",Test_name(test));
+    printf("- %s\n", Test_name(test));
 }
 
-static void TextOutputter_printEndTest(OutputterRef self,TestRef test)
+static void TextOutputter_printEndTest(OutputterRef self, TestRef test)
 {
     (void)self;
     (void)test;
 }
 
-static void TextOutputter_printSuccessful(OutputterRef self,TestRef test,int runCount)
+static void TextOutputter_printSuccessful(OutputterRef self, TestRef test, int runCount)
 {
     (void)self;
     printf("%d) OK %s\n", runCount, Test_name(test));
 }
 
-static void TextOutputter_printFailure(OutputterRef self,TestRef test,char *msg,int line,char *file,int runCount)
+static void TextOutputter_printFailure(OutputterRef self, TestRef test, char *msg, int line, char *file, int runCount)
 {
     (void)self;
     printf("%d) NG %s (%s %d) %s\n", runCount, Test_name(test), file, line, msg);
 }
 
-static void TextOutputter_printStatistics(OutputterRef self,TestResultRef result)
+static void TextOutputter_printStatistics(OutputterRef self, TestResultRef result)
 {
     (void)self;
     if (result->failureCount) {
-        printf("\nrun %d failures %d\n",result->runCount,result->failureCount);
+        printf("\nrun %d failures %d\n", result->runCount, result->failureCount);
     } else {
-        printf("\nOK (%d tests)\n",result->runCount);
+        printf("\nOK (%d tests)\n", result->runCount);
     }
 }
 

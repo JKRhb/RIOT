@@ -65,7 +65,7 @@ char* stdimpl_strcat(char *dst, const char *src)
     return start;
 }
 
-char* stdimpl_strncat(char *dst, const char *src,unsigned int count)
+char* stdimpl_strncat(char *dst, const char *src, unsigned int count)
 {
     char *start = dst;
     char c;
@@ -119,10 +119,10 @@ int stdimpl_strcmp(const char *s1, const char *s2)
     }
 }
 
-static char* _xtoa(unsigned long long v,char *string, int r, int is_neg)
+static char* _xtoa(unsigned long long v, char *string, int r, int is_neg)
 {
     char *start = string;
-    char buf[33],*p;
+    char buf[33], *p;
 
     p = buf;
 
@@ -143,7 +143,7 @@ static char* _xtoa(unsigned long long v,char *string, int r, int is_neg)
     return start;
 }
 
-char* stdimpl_lltoa(long long v,char *string,int r)
+char* stdimpl_lltoa(long long v, char *string, int r)
 {
     if ((r == 10) && (v < 0)) {
         return _xtoa((unsigned long)(-v), string, r, 1);

@@ -43,20 +43,20 @@ static TestResult result_;
 static Test* root_;
 int TestRunnerHadErrors;
 
-static void TestRunner_startTest(TestListner* self,Test* test)
+static void TestRunner_startTest(TestListner* self, Test* test)
 {
     (void)self;
     (void)test;
     stdimpl_print(".");
 }
 
-static void TestRunner_endTest(TestListner* self,Test* test)
+static void TestRunner_endTest(TestListner* self, Test* test)
 {
     (void)self;
     (void)test;
 }
 
-static void TestRunner_addFailure(TestListner* self,Test* test,char* msg,int line,char* file)
+static void TestRunner_addFailure(TestListner* self, Test* test, char* msg, int line, char* file)
 {
     (void)self;
     stdimpl_print("\n");

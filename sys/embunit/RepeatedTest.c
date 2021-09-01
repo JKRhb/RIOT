@@ -40,7 +40,7 @@ char* RepeatedTest_name(RepeatedTest* self)
     return Test_name(self->test);
 }
 
-void RepeatedTest_run(RepeatedTest* self,TestResult* result)
+void RepeatedTest_run(RepeatedTest* self, TestResult* result)
 {
     int i;
     Test* test = self->test;

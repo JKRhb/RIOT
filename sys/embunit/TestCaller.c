@@ -41,9 +41,9 @@ const char* TestCaller_name(TestCaller* self)
     return self->name;
 }
 
-void TestCaller_run(TestCaller* self,TestResult* result)
+void TestCaller_run(TestCaller* self, TestResult* result)
 {
-    TestCase cs = new_TestCase(0,0,0,0);
+    TestCase cs = new_TestCase(0, 0, 0, 0);
     int i;
     cs.setUp= self->setUp;
     cs.tearDown = self->tearDown;
@@ -51,7 +51,7 @@ void TestCaller_run(TestCaller* self,TestResult* result)
         cs.name = self->fixtuers[i].name;
         cs.runTest  = self->fixtuers[i].test;
         /*run test*/
-        Test_run(&cs,result);
+        Test_run(&cs, result);
     }
 }
 

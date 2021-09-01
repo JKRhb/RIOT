@@ -40,7 +40,7 @@ char* TestSuite_name(TestSuite* self)
     return self->name;
 }
 
-void TestSuite_run(TestSuite* self,TestResult* result)
+void TestSuite_run(TestSuite* self, TestResult* result)
 {
     if (self->tests) {
         for (int i = 0; i < self->numberOfTests; i++) {
