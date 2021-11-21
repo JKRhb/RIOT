@@ -63,7 +63,7 @@ const struct _adc_hw_t _adc_hw[] =
    (Table 19 in Technical Reference) */
 const gpio_t _gpio_rtcio_map[] = {
     RTCIO_TOUCH1,        /* GPIO0 */
-    RTCIO_NA     ,       /* GPIO1 */
+    RTCIO_NA,            /* GPIO1 */
     RTCIO_TOUCH2,        /* GPIO2 */
     RTCIO_NA,            /* GPIO3 */
     RTCIO_TOUCH0,        /* GPIO4 */

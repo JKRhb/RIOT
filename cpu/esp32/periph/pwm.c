@@ -145,8 +145,9 @@ uint32_t pwm_init(pwm_t pwm, pwm_mode_t mode, uint32_t freq, uint16_t res)
     CHECK_PARAM_RET (freq > 0, 0);
 
     if (_pwm_init_first_time) {
-        if (!_pwm_configuration())
+        if (!_pwm_configuration()) {
             return 0;
+        }
     }
 
     if (_pwm_hw[pwm].gpio_num == 0) {
@@ -375,8 +376,9 @@ static void _pwm_start(pwm_t pwm)
 
     /* set the duty for all channels to start them */
     for (int i = 0; i < _pwm_dev[pwm].chn_num; i++) {
-        if (_pwm_dev[pwm].chn[i].used)
+        if (_pwm_dev[pwm].chn[i].used) {
             pwm_set(pwm, i, _pwm_dev[pwm].chn[i].duty);
+        }
     }
 
     /* sync all timers */

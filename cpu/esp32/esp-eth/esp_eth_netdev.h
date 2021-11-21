@@ -37,8 +37,7 @@ extern const netdev_driver_t esp_eth_driver;
 /**
  * @brief   Device descriptor for ESP-ETH devices
  */
-typedef struct
-{
+typedef struct {
     netdev_t netdev;                    /**< netdev parent struct */
 
     uint16_t rx_len;                     /**< number of bytes received */

@@ -167,24 +167,24 @@ struct _rtc_gpio_t {
 
 /* Table of RTCIO GPIO pins information */
 static const struct _rtc_gpio_t _rtc_gpios[] = {
-    {  0, RTC_IO_SENSOR_PADS_REG, 27, 32, 32, 32 }, /* rtc0 (gpio36) SENSOR_VP/SENSE 1 */
-    {  1, RTC_IO_SENSOR_PADS_REG, 26, 32, 32, 32 }, /* rtc1 (gpio37) SENSOR_CAPP/SENSE 2 */
-    {  2, RTC_IO_SENSOR_PADS_REG, 25, 32, 32, 32 }, /* rtc2 (gpio38) SENSOR_CAPN/SENSE 3 */
-    {  3, RTC_IO_SENSOR_PADS_REG, 24, 32, 32, 32 }, /* rtc3 (gpio39) SENSOR_VN/SENSE 4*/
-    {  4, RTC_IO_ADC_PAD_REG, 29, 32, 32, 32 },     /* rtc4 (gpio34) VDET_1/ADC1 */
-    {  5, RTC_IO_ADC_PAD_REG, 28, 32, 32, 32 },     /* rtc5 (gpio35) VDET_2/ADC2 */
-    {  6, RTC_IO_PAD_DAC1_REG, 17, 27, 28, 30 },    /* rtc6 (gpio25) DAC1 */
-    {  7, RTC_IO_PAD_DAC2_REG, 17, 27, 28, 30 },    /* rtc7 (gpio26) DAC1 */
-    {  8, RTC_IO_XTAL_32K_PAD_REG, 18, 27, 28, 30 },/* rtc8 (gpio33) XTAL_32K_N */
-    {  9, RTC_IO_XTAL_32K_PAD_REG, 17, 22, 23, 25 },/* rtc9 (gpio32) XTAL_32K_P */
-    { 10, RTC_IO_TOUCH_PAD0_REG, 19, 27, 28, 29 },  /* rtc10 (gpio4) TOUCH0 */
-    { 11, RTC_IO_TOUCH_PAD1_REG, 19, 27, 28, 29 },  /* rtc11 (gpio0) TOUCH1 */
-    { 12, RTC_IO_TOUCH_PAD2_REG, 19, 27, 28, 29 },  /* rtc12 (gpio2) TOUCH2 */
-    { 13, RTC_IO_TOUCH_PAD3_REG, 19, 27, 28, 29 },  /* rtc13 (gpio15) TOUCH3 */
-    { 14, RTC_IO_TOUCH_PAD4_REG, 19, 27, 28, 29 },  /* rtc14 (gpio13) TOUCH4 */
-    { 15, RTC_IO_TOUCH_PAD5_REG, 19, 27, 28, 29 },  /* rtc15 (gpio12) TOUCH5 */
-    { 16, RTC_IO_TOUCH_PAD6_REG, 19, 27, 28, 29 },  /* rtc16 (gpio14) TOUCH6 */
-    { 17, RTC_IO_TOUCH_PAD7_REG, 19, 27, 28, 29 }   /* rtc17 (gpio27) TOUCH7 */
+    {  0, RTC_IO_SENSOR_PADS_REG, 27, 32, 32, 32 },  /* rtc0 (gpio36) SENSOR_VP/SENSE 1 */
+    {  1, RTC_IO_SENSOR_PADS_REG, 26, 32, 32, 32 },  /* rtc1 (gpio37) SENSOR_CAPP/SENSE 2 */
+    {  2, RTC_IO_SENSOR_PADS_REG, 25, 32, 32, 32 },  /* rtc2 (gpio38) SENSOR_CAPN/SENSE 3 */
+    {  3, RTC_IO_SENSOR_PADS_REG, 24, 32, 32, 32 },  /* rtc3 (gpio39) SENSOR_VN/SENSE 4*/
+    {  4, RTC_IO_ADC_PAD_REG, 29, 32, 32, 32 },      /* rtc4 (gpio34) VDET_1/ADC1 */
+    {  5, RTC_IO_ADC_PAD_REG, 28, 32, 32, 32 },      /* rtc5 (gpio35) VDET_2/ADC2 */
+    {  6, RTC_IO_PAD_DAC1_REG, 17, 27, 28, 30 },     /* rtc6 (gpio25) DAC1 */
+    {  7, RTC_IO_PAD_DAC2_REG, 17, 27, 28, 30 },     /* rtc7 (gpio26) DAC1 */
+    {  8, RTC_IO_XTAL_32K_PAD_REG, 18, 27, 28, 30 }, /* rtc8 (gpio33) XTAL_32K_N */
+    {  9, RTC_IO_XTAL_32K_PAD_REG, 17, 22, 23, 25 }, /* rtc9 (gpio32) XTAL_32K_P */
+    { 10, RTC_IO_TOUCH_PAD0_REG, 19, 27, 28, 29 },   /* rtc10 (gpio4) TOUCH0 */
+    { 11, RTC_IO_TOUCH_PAD1_REG, 19, 27, 28, 29 },   /* rtc11 (gpio0) TOUCH1 */
+    { 12, RTC_IO_TOUCH_PAD2_REG, 19, 27, 28, 29 },   /* rtc12 (gpio2) TOUCH2 */
+    { 13, RTC_IO_TOUCH_PAD3_REG, 19, 27, 28, 29 },   /* rtc13 (gpio15) TOUCH3 */
+    { 14, RTC_IO_TOUCH_PAD4_REG, 19, 27, 28, 29 },   /* rtc14 (gpio13) TOUCH4 */
+    { 15, RTC_IO_TOUCH_PAD5_REG, 19, 27, 28, 29 },   /* rtc15 (gpio12) TOUCH5 */
+    { 16, RTC_IO_TOUCH_PAD6_REG, 19, 27, 28, 29 },   /* rtc16 (gpio14) TOUCH6 */
+    { 17, RTC_IO_TOUCH_PAD7_REG, 19, 27, 28, 29 },   /* rtc17 (gpio27) TOUCH7 */
 };
 
 /* Table of the usage type of each GPIO pin */
@@ -251,15 +251,15 @@ const char* _gpio_pin_usage_str[] =
 
 #define FUN_GPIO   2 /* the function number for all GPIOs */
 
-#define GPIO_PIN_SET(b) if (b < 32) GPIO.out_w1ts = BIT(b); else GPIO.out1_w1ts.val = BIT(b-32)
-#define GPIO_PIN_CLR(b) if (b < 32) GPIO.out_w1tc = BIT(b); else GPIO.out1_w1tc.val = BIT(b-32)
+#define GPIO_PIN_SET(b) if (b < 32) {GPIO.out_w1ts = BIT(b);} else {GPIO.out1_w1ts.val = BIT(b-32)}
+#define GPIO_PIN_CLR(b) if (b < 32) {GPIO.out_w1tc = BIT(b);} else {GPIO.out1_w1tc.val = BIT(b-32)}
 #define GPIO_PIN_GET(b) (b < 32) ? (GPIO.out >> b) & 1 : (GPIO.out1.val >> (b-32)) & 1
 
-#define GPIO_REG_BIT_GET(l,h,b) ((b < 32) ? GPIO.l & BIT(b) : GPIO.h.val & BIT(b-32))
-#define GPIO_REG_BIT_SET(l,h,b) if (b < 32) GPIO.l |=  BIT(b); else GPIO.h.val |=  BIT(b-32)
-#define GPIO_REG_BIT_CLR(l,h,b) if (b < 32) GPIO.l &= ~BIT(b); else GPIO.h.val &= ~BIT(b-32)
-#define GPIO_REG_BIT_XOR(l,h,b) if (b < 32) GPIO.l ^=  BIT(b); else GPIO.h.val ^=  BIT(b-32)
-#define REG_SET_CLR_BIT(c,r,f) if (c) REG_SET_BIT(r,f); else REG_CLR_BIT(r,f)
+#define GPIO_REG_BIT_GET(l, h, b) ((b < 32) ? GPIO.l & BIT(b) : GPIO.h.val & BIT(b-32))
+#define GPIO_REG_BIT_SET(l, h, b) if {(b < 32) GPIO.l |=  BIT(b);} else {GPIO.h.val |=  BIT(b-32)}
+#define GPIO_REG_BIT_CLR(l, h, b) if {(b < 32) GPIO.l &= ~BIT(b);} else {GPIO.h.val &= ~BIT(b-32)}
+#define GPIO_REG_BIT_XOR(l, h, b) if {(b < 32) GPIO.l ^=  BIT(b);} else {GPIO.h.val ^=  BIT(b-32)}
+#define REG_SET_CLR_BIT(c, r, f) if {(c) REG_SET_BIT(r, f);} else {REG_CLR_BIT(r, f)}
 
 int gpio_init(gpio_t pin, gpio_mode_t mode)
 {
