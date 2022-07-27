@@ -114,6 +114,19 @@ extern "C" {
 /** @} */
 
 /**
+ * @brief   Static initializer for the "All CoAP Nodes" multicast IPv6
+ *          address (ff02::fd)
+ *
+ * @see <a href="https://tools.ietf.org/html/rfc7252#section-12.8">
+ *          RFC 7252, section 12.8
+ *      </a>
+ */
+#define COAP_ALL_COAP_NODES_ADDR  {{ 0xff, 0x02, 0x00, 0x00, \
+                                     0x00, 0x00, 0x00, 0x00, \
+                                     0x00, 0x00, 0x00, 0x00, \
+                                     0x00, 0x00, 0x00, 0xfd }}
+
+/**
  * @brief   Nanocoap-specific value to indicate no format specified
  */
 #define COAP_FORMAT_NONE        (UINT16_MAX)

@@ -91,6 +91,17 @@ extern "C" {
 #endif
 
 /**
+ * @brief   Number of multicast addresses needed for @ref net_gcoap "Gcoap".
+ *
+ * @note    Used for calculation of @ref GNRC_NETIF_IPV6_GROUPS_NUMOF
+ */
+#ifdef MODULE_GCOAP
+#define GNRC_NETIF_COAP_ADDR        (1)
+#else
+#define GNRC_NETIF_COAP_ADDR        (0)
+#endif
+
+/**
  * @brief   Number of multicast addresses needed for a @ref net_gnrc_ipv6 "IPv6"
  *          router
  *
@@ -126,6 +137,7 @@ extern "C" {
 #ifndef GNRC_NETIF_IPV6_GROUPS_NUMOF
 #define GNRC_NETIF_IPV6_GROUPS_NUMOF   (CONFIG_GNRC_NETIF_IPV6_ADDRS_NUMOF + \
                                         GNRC_NETIF_RPL_ADDR + \
+                                        GNRC_NETIF_COAP_ADDR + \
                                         GNRC_NETIF_IPV6_RTR_ADDR + 1)
 #endif
 

@@ -29,6 +29,9 @@
 #include "net/gnrc/ipv6/nib.h"
 #include "net/gnrc/ipv6.h"
 #endif /* IS_USED(MODULE_GNRC_IPV6_NIB) */
+#if IS_USED(MODULE_NANOCOAP)
+#include "net/nanocoap.h"
+#endif /* IS_USED(MODULE_NANOCOAP) */
 #if IS_USED(MODULE_GNRC_NETIF_PKTQ)
 #include "net/gnrc/netif/pktq.h"
 #endif /* IS_USED(MODULE_GNRC_NETIF_PKTQ) */
@@ -1869,6 +1872,12 @@ static void *_gnrc_netif_thread(void *args)
 #if (CONFIG_GNRC_NETIF_MIN_WAIT_AFTER_SEND_US > 0U)
     uint32_t last_wakeup = ztimer_now(ZTIMER_USEC);
 #endif
+#if IS_USED(MODULE_NANOCOAP)
+    const ipv6_addr_t all_coap_nodes_link_local_addr = COAP_ALL_COAP_NODES_ADDR;
+    /* register all_coap_nodes multicast address */
+    gnrc_netif_ipv6_group_join_internal(netif,
+                                        &all_coap_nodes_link_local_addr);
+#endif /* IS_USED(MODULE_NANOCOAP) */
 
     while (1) {
         msg_t msg;
